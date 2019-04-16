@@ -1,15 +1,25 @@
 //
 // COLORS
-$base: #fff;
 //
+$base-color: #fff;
+$primary-color: #6534ff;
 
+$headline-text-color: #fff;
+$text-color: #2f2f2f;
+$special-text-color: #546ad7;
+$amount-color: #931600;
+
+$link-color: #0781d6;
+$link-color-hover: #044573;
+
+$line-light-color: #eee;
 //
 // BREAKPOINTS
 //
-$desktop_large_min: 1200px;
+$desktop-large-min: 1200px;
 
-$desktop_small_min: 992px;
-$desktop_small_max: 1199px;
+$desktop-small-min: 992px;
+$desktop-small-max: 1199px;
 
-$tablet_max: 991px;
-$tablet_min: 768px;
+$tablet-max: 991px;
+$tablet-min: 768px;

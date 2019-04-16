@@ -1,0 +1,43 @@
+.shop {
+  font-weight: 300;
+  padding: 20px 0;
+  border-bottom: 1px solid $line-light-color;
+
+  &__values {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-min){
+      flex-direction: row;
+
+      .date { flex-basis: 20%; }
+      .place { flex-basis: 20%; }
+      .payed { flex-basis: 10%; }
+      .description { flex-basis: 35%; }
+      .amount { flex-basis: 15%; }
+    }
+  }
+
+  .amount {
+    padding-top: 10px;
+    text-align: right;
+    color: $amount-color;
+
+    @media (min-width: $tablet-min){
+      padding-top: 0;
+    }
+  }
+
+  & > p {
+    flex-basis: 100%;
+  }
+
+  &__show-expenses {
+    display: block;
+    padding-top: 10px;
+  }
+
+  &:first-child {
+    border-top: 1px solid $line-light-color;
+  }
+}

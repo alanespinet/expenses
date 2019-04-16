@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Expense = () => {
+const Expense = props => {
   return (
-    <div>Expense</div>
+    <div className="expense">
+      <p className="name">{ props.data.name }</p>
+      <p className="type">{ props.data.type }</p>
+      <p className="amount bold">$ { props.data.amount.toFixed(2) }</p>
+    </div>
   )
 }
 

@@ -1,10 +1,22 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: $text-color;
+
+  & > * {
+    font-family: inherit;
+    color: inherit;
+  }
 }
 
 body {
-  background-color: $base;
+  background-color: $base-color;
+  overflow-y: scroll;
 }
 
 .container {
@@ -12,15 +24,45 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 
-  @media ( min-width: $tablet_min ){
+  @media ( min-width: $tablet-min ){
     max-width: 750px;
   }
 
-  @media ( min-width: $desktop_small_min ){
+  @media ( min-width: $desktop-small-min ){
     max-width: 950px;
   }
 
-  @media ( min-width: $desktop_large_min ){
+  @media ( min-width: $desktop-large-min ){
     max-width: 1170px;
+  }
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  color: $link-color;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+h2 {
+  font-weight: 300;
+  color: $primary-color;
+  font-size: 36px;
+  padding-bottom: 40px;
+
+  @media (min-width: $desktop-small-min){
+    font-size: 42px;
   }
 }

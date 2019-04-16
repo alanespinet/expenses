@@ -1,0 +1,25 @@
+.shoplist {
+
+  &__headlines {
+    display: none;
+
+    @media (min-width: $tablet-min){
+      display: flex;
+      justify-content: space-between;
+
+      .date { flex-basis: 20%; }
+      .place { flex-basis: 20%; }
+      .payed { flex-basis: 10%; }
+      .description { flex-basis: 35%; }
+
+      .amount {
+        flex-basis: 15%;
+        text-align: right;
+      }
+    }
+  }
+
+  &__entries {
+    padding-top: 20px;
+  }
+}

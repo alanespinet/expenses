@@ -1,0 +1,14 @@
+.expense {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+
+  .name { flex-basis: 40% }
+  .type {flex-basis: 40% }
+
+  .amount {
+    flex-basis: 20%;
+    padding-top: 0;
+  }
+}
