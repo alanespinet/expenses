@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment';
 
 import ExpenseList from './ExpenseList'
 import { toggleViewExpenses } from '../redux/actions/shops'
@@ -8,16 +9,16 @@ class Shop extends Component {
 
   onToggleViewExpenses = e => {
     e.preventDefault();
-    this.props.toggleViewExpenses(this.props.data.id)
+    this.props.toggleViewExpenses(this.props.data._id)
   }
 
   render(){
     return (
       <div className="shop">
         <div className="shop__values">
-          <p className="date">{ this.props.data.date }</p>
-          <p className="place">{ this.props.data.place }</p>
-          <p className="payed">{ this.props.data.payed }</p>
+          <p className="date">{ moment(this.props.data.date).format('MM/DD/YYYY') }</p>
+          <p className="place">{ this.props.data.place.name }</p>
+          <p className="payed">{ this.props.data.payed.name }</p>
           <p className="description">{ this.props.data.description }</p>
           <p className="bold amount">$ { this.props.data.amount.toFixed(2) }</p>
         </div>

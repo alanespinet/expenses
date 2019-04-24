@@ -66,3 +66,63 @@ h2 {
     font-size: 42px;
   }
 }
+
+h3 {
+  font-weight: 300;
+  color: $special-text-color;
+  font-size: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: $desktop-small-min){
+    font-size: 36px;
+  }
+}
+
+button {
+  height: 40px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-radius: 0;
+  border: none;
+  color: #fff;
+  width: 200px;
+  font-weight: 300;
+  font-size: 16px;
+  transition: all .3s ease;
+
+  &.primary {
+    background-color: $primary-color;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.primary:hover {
+    background-color: darken($primary-color, 15%);
+  }
+
+  &.accept {
+    background-color: $accept-color;
+  }
+
+  &.accept:hover {
+    background-color: darken($accept-color, 15%);
+  }
+
+  &.warning {
+    background-color: $warning-color;
+  }
+
+  &.warning:hover {
+    background-color: darken($warning-color, 15%);
+  }
+
+  &.action {
+    background-color: $action-color;
+  }
+
+  &.action:hover {
+    background-color: darken($action-color, 15%);
+  }
+}

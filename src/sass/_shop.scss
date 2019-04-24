@@ -7,6 +7,11 @@
     display: flex;
     flex-direction: column;
 
+    .place,
+    .payed {
+      text-transform: capitalize;
+    }
+
     @media (min-width: $tablet-min){
       flex-direction: row;
 

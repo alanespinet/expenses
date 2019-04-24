@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Menu from '../Layout/Menu'
+import AddShop from '../AddShop'
 
 class Add extends Component {
   render(){
     return (
       <>
         <Menu />
-        <h2>Add</h2>
+        <AddShop />
       </>
     )
   }
