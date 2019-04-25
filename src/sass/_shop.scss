@@ -45,4 +45,23 @@
   &:first-child {
     border-top: 1px solid $line-light-color;
   }
+
+  &__action-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @media (min-width: $mobile-medium-min){
+      margin-top: 15px;
+    }
+
+    button {
+      flex-basis: 100%;
+
+      @media (min-width: $mobile-medium-min){
+        flex-basis: 120px;
+      }
+    }
+  }
 }

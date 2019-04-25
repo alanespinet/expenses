@@ -1,0 +1,105 @@
+.add-shop-expenses-list-module {
+  padding: 15px;
+  padding-top: 30px;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+      flex-basis: 100%;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $light-gray;
+      font-family: 'Roboto Mono', sans-serif;
+      font-weight: 300;
+
+      &:nth-child(even){
+        background-color: #fff;
+      }
+
+      @media(max-width: $mobile-max){
+        &:nth-child(even){
+          border-left: 1px solid $light-gray;
+          border-right: 1px solid $light-gray;
+        }
+      }
+
+      @media(min-width: $tablet-min){
+        flex-basis: 50%;
+
+        &:nth-child(even){
+          background-color: $light-gray;
+        }
+
+        &:nth-child(4n + 1),
+        &:nth-child(4n + 2) {
+          background-color: #fff;
+        }
+
+        &:nth-child(odd){
+          border-right: 1px solid darken($line-light-color, 10%);
+        }
+      }
+
+      .add-shop-expenses-list-item__name,
+      .add-shop-expenses-list-item__type,
+      .add-shop-expenses-list-item__amount,
+      .add-shop-expenses-list-item__delete {
+        flex-basis: 100%;
+      }
+
+      .add-shop-expenses-list-item__amount {
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      .add-shop-expenses-list-item__delete {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+
+        button {
+          width: auto;
+          height: 32px;
+          background-color: transparent;
+          color: $warning-color;
+          transition: all .3s ease;
+
+          &:hover {
+            color: darken( $warning-color, 30% );
+            cursor: pointer;
+          }
+        }
+      }
+
+
+      @media (min-width: $desktop-small-min){
+        .add-shop-expenses-list-item__name {
+          flex-basis: 50%;
+        }
+
+        .add-shop-expenses-list-item__type {
+          flex-basis: 30%;
+        }
+
+        .add-shop-expenses-list-item__amount {
+          flex-basis: 20%;
+        }
+
+      }
+
+      .add-shop-expenses-list-item__amount {
+        color: $amount-color;
+        font-weight: bold;
+      }
+
+      .add-shop-expenses-list-item__type {
+        color: $special-text-color;
+      }
+    }
+  }
+}

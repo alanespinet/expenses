@@ -94,6 +94,9 @@ const shopsReducer = (state = defaultState, action) => {
         return shop
       })
 
+    case 'ADD_SHOP':
+      return [...state, action.payload]
+
     default:
       return state
   }

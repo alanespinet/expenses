@@ -3,13 +3,24 @@ import { connect } from 'react-redux'
 import moment from 'moment';
 
 import ExpenseList from './ExpenseList'
-import { toggleViewExpenses } from '../redux/actions/shops'
+import { toggleViewExpenses, startDeleteShop } from '../redux/actions/shops'
 
 class Shop extends Component {
+  constructor(props){
+    super(props)
+    this.onDeleteShop = this.onDeleteShop.bind(this)
+  }
 
   onToggleViewExpenses = e => {
     e.preventDefault();
     this.props.toggleViewExpenses(this.props.data._id)
+  }
+
+  onDeleteShop(){
+    if( window.confirm('Are you sure you want to delete this shop?') ){
+      const id = this.props.data._id
+      this.props.deleteShop({ id })
+    }
   }
 
   render(){
@@ -32,13 +43,19 @@ class Shop extends Component {
           href="#"
           onClick={ this.onToggleViewExpenses }
         >{ `${ this.props.data.showingExpenses ? 'Hide' : 'Show' } Expenses` }</a>
+
+        <div className="shop__action-buttons">
+          <button className="accept">Edit</button>
+          <button className="warning" onClick={ this.onDeleteShop }>Delete</button>
+        </div>
       </div>
     )
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  toggleViewExpenses: shopId => dispatch( toggleViewExpenses(shopId) )
+  toggleViewExpenses: shopId => dispatch( toggleViewExpenses(shopId) ),
+  deleteShop: shopId => dispatch( startDeleteShop(shopId) )
 })
 
 export default connect(null, mapDispatchToProps)(Shop)

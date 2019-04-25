@@ -7,7 +7,7 @@ class Add extends Component {
     return (
       <>
         <Menu />
-        <AddShop />
+        <AddShop { ...this.props } />
       </>
     )
   }

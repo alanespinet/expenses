@@ -1,4 +1,9 @@
 .shoplist {
+  margin-bottom: 30px;
+
+  @media (min-width: $desktop-small-min){
+    margin-bottom: 60px;
+  }
 
   &__headlines {
     display: none;
