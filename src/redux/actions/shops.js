@@ -52,3 +52,17 @@ export const startDeleteShop = id => {
     .catch(error => console.log(error))
   }
 }
+
+export const startUpdateShop = (id, updatedData) => {
+  return dispatch => {
+    return axios.post('http://localhost:4000/edit_shop', { id, updatedData })
+    .then(() => {
+      return axios.get('http://localhost:4000/shops')
+        .then(response => {
+          return dispatch( loadShops(response.data) )
+        })
+        .catch(error => console.log(error))
+    })
+    .catch(error => console.log(error))
+  }
+}

@@ -1,0 +1,99 @@
+.menu-mobile {
+
+  &__button {
+    position: fixed;
+    top: 16px;
+    left: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    transition: all .3s ease;
+    background-color: $primary-color;
+    z-index: 100000;
+
+    .menu-button-bar {
+      background-color: #fff;
+      height: 2px;
+      width: 24px;
+      border-radius: 5px;
+      margin: 2px auto;
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      background-color: $text-color;
+      cursor: pointer;
+
+      .menu-button-bar {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &.visible {
+    .menu-mobile__button {
+      .first-bar {
+        transform: translateY(6px) rotate(45deg)
+      }
+
+      .second-bar {
+        opacity: 0;
+      }
+
+      .third-bar {
+        transform: translateY(-6px) rotate(-45deg)
+      }
+    }
+  }
+
+  &__options-wrapper {
+    align-items: center;
+    justify-content: center;
+    background-color: rgba( $primary-color, .98 );
+    position: fixed;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    transition: all .3s ease;
+
+    &.visible {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+
+    a {
+      font-weight: 300;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+      padding: 10px 0;
+
+      &:hover {
+        background-color: $text-color;
+        color: #fff;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-min){
+    display: none;
+  }
+}

@@ -52,6 +52,7 @@
     &__control-group {
       margin-bottom: 20px;
       padding: 0 15px;
+      position: relative;
 
       &.buttons-group {
         padding-top: 20px;
@@ -87,6 +88,13 @@
           color: lighten($text-color, 50%);
           text-align: center;
         }
+      }
+
+      .entry-input {
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 30px);
+        left: 15px;
       }
     }
 

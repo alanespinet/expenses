@@ -127,3 +127,7 @@ button {
     background-color: darken($action-color, 15%);
   }
 }
+
+input {
+  outline: none !important;
+}

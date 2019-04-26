@@ -6,7 +6,8 @@ const Menu = () => {
     <nav className="menu">
       <NavLink to="/" activeClassName="menu-active" exact={ true }>Shops</NavLink>
       <NavLink to="/add" activeClassName="menu-active">Add Shop</NavLink>
-      <NavLink to="/about" activeClassName="menu-active">About</NavLink>
+      <NavLink to="/reports" activeClassName="menu-active">Reports</NavLink>
+      <NavLink to="/about" activeClassName="menu-active" className="menu__about-link">About</NavLink>
     </nav>
   )
 }

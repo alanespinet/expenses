@@ -5,6 +5,8 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import View from './components/View'
 import Login from './components/pages/Login'
 import Add from './components/pages/Add'
+import Edit from './components/pages/Edit'
+import Reports from './components/pages/Reports'
 import About from './components/pages/About'
 import ShopList from './components/ShopList'
 
@@ -23,6 +25,8 @@ class App extends Component {
             <div>
               <Route path="/" exact={true} component={ Home } />
               <Route path="/add" exact={true} component={ Add } />
+              <Route path="/edit" exact={true} component={ Edit } />
+              <Route path="/reports" exact={true} component={ Reports } />
               <Route path="/login" exact={true} component={ Login } />
               <Route path="/about" exact={true} component={ About } />
             </div>

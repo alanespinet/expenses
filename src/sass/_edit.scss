@@ -1,0 +1,22 @@
+.edit-redirect-message {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  background-color: $line-light-color;
+  padding: 25px;
+
+  h2 {
+    color: $warning-color;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    color: $text-color;
+    line-height: 1.4;
+  }
+
+  &__warning-span {
+    font-weight: bold;
+    color: $warning-color;
+  }
+}

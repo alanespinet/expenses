@@ -3,6 +3,7 @@
   font-weight: 300;
   display: flex;
   justify-content: flex-start;
+  display: none;
 
   a {
     text-decoration: none;
@@ -12,5 +13,13 @@
     &.menu-active {
       font-weight: bold;
     }
+
+    &.menu__about-link {
+      margin-left: 60px;
+    }
+  }
+
+  @media (min-width: $tablet-min){
+    display: block;
   }
 }

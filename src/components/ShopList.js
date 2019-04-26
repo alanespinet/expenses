@@ -24,7 +24,7 @@ class ShopList extends Component {
 
         <div className="shoplist__entries">
           { this.props.shops.map( shop => (
-            <Shop key={ shop._id } data={ shop } />
+            <Shop key={ shop._id } data={ shop } history={this.props.history}/>
           ) ) }
         </div>
       </div>

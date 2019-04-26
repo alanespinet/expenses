@@ -4,11 +4,14 @@ import moment from 'moment';
 
 import ExpenseList from './ExpenseList'
 import { toggleViewExpenses, startDeleteShop } from '../redux/actions/shops'
+import { setCurrent } from '../redux/actions/current'
 
 class Shop extends Component {
   constructor(props){
     super(props)
+
     this.onDeleteShop = this.onDeleteShop.bind(this)
+    this.onEnterEditShop = this.onEnterEditShop.bind(this)
   }
 
   onToggleViewExpenses = e => {
@@ -21,6 +24,11 @@ class Shop extends Component {
       const id = this.props.data._id
       this.props.deleteShop({ id })
     }
+  }
+
+  onEnterEditShop(){
+    this.props.setCurrent( this.props.data._id, this.props.data )
+    this.props.history.push('/edit')
   }
 
   render(){
@@ -45,7 +53,7 @@ class Shop extends Component {
         >{ `${ this.props.data.showingExpenses ? 'Hide' : 'Show' } Expenses` }</a>
 
         <div className="shop__action-buttons">
-          <button className="accept">Edit</button>
+          <button className="accept" onClick={ this.onEnterEditShop }>Edit</button>
           <button className="warning" onClick={ this.onDeleteShop }>Delete</button>
         </div>
       </div>
@@ -55,7 +63,8 @@ class Shop extends Component {
 
 const mapDispatchToProps = dispatch => ({
   toggleViewExpenses: shopId => dispatch( toggleViewExpenses(shopId) ),
-  deleteShop: shopId => dispatch( startDeleteShop(shopId) )
+  deleteShop: shopId => dispatch( startDeleteShop(shopId) ),
+  setCurrent: (shopId, shopData) => dispatch( setCurrent(shopId, shopData) )
 })
 
 export default connect(null, mapDispatchToProps)(Shop)
