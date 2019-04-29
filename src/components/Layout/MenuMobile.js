@@ -26,6 +26,7 @@ class MenuMobile extends Component {
           <div className="menu-mobile__options">
             <NavLink to="/" activeClassName="menu-active" exact={ true } onClick={ this.toggleMenuOpen }>Shops</NavLink>
             <NavLink to="/add" activeClassName="menu-active" onClick={ this.toggleMenuOpen }>Add Shop</NavLink>
+            <NavLink to="/filters" activeClassName="menu-active" onClick={ this.toggleMenuOpen }>Filters</NavLink>
             <NavLink to="/reports" activeClassName="menu-active" onClick={ this.toggleMenuOpen }>Reports</NavLink>
             <NavLink to="/about" activeClassName="menu-active" className="menu__about-link" onClick={ this.toggleMenuOpen }>About</NavLink>
           </div>

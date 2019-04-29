@@ -1,0 +1,31 @@
+.objects-list {
+  list-style-type: none;
+  font-weight: 300;
+  color: lighten($text-color, 15%);
+
+  margin-top: 20px;
+
+  li {
+    display: inline-block;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lighten($line-light-color, 2%);
+    padding: 10px;
+
+    button {
+      color: $warning-color;
+      width: 24px;
+      height: 24px;
+      margin-left: 5px;
+      transform: rotate(45deg);
+    }
+  }
+
+  @media (min-width: $desktop-small-min){
+    height: 112px;
+    overflow-y: scroll;
+  }
+}

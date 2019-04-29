@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import View from './components/View'
 import Login from './components/pages/Login'
 import Add from './components/pages/Add'
+import Filters from './components/pages/Filters'
 import Edit from './components/pages/Edit'
 import Reports from './components/pages/Reports'
 import About from './components/pages/About'
@@ -24,11 +25,12 @@ class App extends Component {
           <BrowserRouter>
             <div>
               <Route path="/" exact={true} component={ Home } />
-              <Route path="/add" exact={true} component={ Add } />
-              <Route path="/edit" exact={true} component={ Edit } />
-              <Route path="/reports" exact={true} component={ Reports } />
-              <Route path="/login" exact={true} component={ Login } />
-              <Route path="/about" exact={true} component={ About } />
+              <Route path="/add" component={ Add } />
+              <Route path="/filters" component={ Filters } />
+              <Route path="/edit" component={ Edit } />
+              <Route path="/reports" component={ Reports } />
+              <Route path="/login" component={ Login } />
+              <Route path="/about" component={ About } />
             </div>
           </BrowserRouter>
         </View>
